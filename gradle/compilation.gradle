@@ -1,0 +1,11 @@
+allprojects {
+    ext {
+        encoding = 'UTF-8'
+    }
+
+    tasks.withType(JavaCompile) {
+        options.encoding = encoding
+    }
+
+    sourceCompatibility = '1.8'
+}

@@ -1,0 +1,9 @@
+allprojects {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+//        implementation 'io.cucumber:cucumber-picocontainer:5.6.0'
+        testImplementation 'junit:junit:4.13'
+    }
+}
