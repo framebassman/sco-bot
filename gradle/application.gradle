@@ -1,0 +1,5 @@
+allprojects {
+    application {
+        mainClassName = 'tech.romashov.App'
+    }
+}
