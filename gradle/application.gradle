@@ -1,5 +1,5 @@
 allprojects {
     application {
-        mainClassName = 'tech.romashov.App'
+        mainClassName = 'tech.romashov.Application'
     }
 }
