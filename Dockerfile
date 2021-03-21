@@ -10,3 +10,6 @@ COPY --from=build-env /app/build/install/sco-bot .
 # Run under non-privileged user with minimal write permissions
 USER user
 ENTRYPOINT ["bin/sco-bot"]
+# Expose dummy port to avoid Heroku errors
+ENV PORT=80
+EXPOSE $PORT
