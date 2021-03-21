@@ -7,5 +7,5 @@ allprojects {
         options.encoding = encoding
     }
 
-    sourceCompatibility = '1.8'
+    sourceCompatibility = 11
 }

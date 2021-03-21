@@ -13,7 +13,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 @Component
 // Наследуемся от TelegramLongPollingBot - абстрактного класса Telegram API
 public class Bot extends TelegramLongPollingBot {
-    // Аннотация @Value позволяет задавать значение полю путем считывания из application.yaml
+    // Аннотация @Value позволяет задавать значение полю путем считывания из application.yml
     @Value("${bot.name}")
     private String botUsername;
 
@@ -32,6 +32,7 @@ public class Bot extends TelegramLongPollingBot {
     @Override
     public void onUpdateReceived(Update update) {
         try {
+            log.info("Got message. Try to reply");
             SendMessage message = new SendMessage();
             message.setChatId(String.valueOf(update.getMessage().getChatId()));
             message.setText("Hi!");
