@@ -3,7 +3,8 @@ allprojects {
         mainClassName = 'tech.romashov.App'
         applicationDefaultJvmArgs = [
                 '-Xmx330m',
-                '-Xss512k'
+                '-Xss512k',
+                "-DPORT=${System.getProperty("PORT")}"
         ]
     }
 }
