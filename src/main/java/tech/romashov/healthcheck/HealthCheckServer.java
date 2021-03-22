@@ -9,16 +9,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class HealthCheckServer {
-    @Value("${healthcheck.port}")
-    private int port;
-
     public HealthCheckServer() throws Exception {
         Server server = new Server();
         ServerConnector connector = new ServerConnector(server);
-        if (port != 0) {
-            connector.setPort(port);
-        } else {
+        if (System.getProperty("PORT").equals("") || System.getProperty("PORT").equals(null)) {
             connector.setPort(8081);
+        } else {
+            connector.setPort(Integer.valueOf(System.getProperty("PORT")));
         }
         server.setConnectors(new Connector[] {connector});
         ServletContextHandler context = new ServletContextHandler(ServletContextHandler.SESSIONS);
