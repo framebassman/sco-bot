@@ -4,7 +4,7 @@ allprojects {
         applicationDefaultJvmArgs = [
                 '-Xmx330m',
                 '-Xss512k',
-                "-DPORT=${System.getProperty("PORT")}"
+                '-DPORT=$PORT'
         ]
     }
 }
