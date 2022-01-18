@@ -1,0 +1,14 @@
+name: Wakeup
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *' # Runs every 5 mins
+
+jobs:
+  build-pages:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Trigger GitHub pages rebuild
+        run: |
+          curl https://scoteam-bot.herokuapp.com
