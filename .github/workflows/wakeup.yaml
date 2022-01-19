@@ -2,7 +2,7 @@ name: Wakeup
 
 on:
   schedule:
-    - cron: '*/20 * * * *' # Runs every 5 mins
+    - cron: '*/15 06-23 * * *' # At every 15th minute past every hour from 6 through 23
 
 jobs:
   build-pages:
