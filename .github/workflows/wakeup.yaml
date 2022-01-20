@@ -8,6 +8,6 @@ jobs:
   build-pages:
     runs-on: ubuntu-20.04
     steps:
-      - name: Trigger GitHub pages rebuild
+      - name: Heroku dyno is shutting down automatically. We should trigger it for waking up.
         run: |
           curl https://scoteam-bot.herokuapp.com
