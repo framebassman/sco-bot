@@ -1,4 +1,4 @@
-FROM gradle:jdk11-hotspot AS build-env
+FROM gradle:5.6.4-jdk11 AS build-env
 COPY . /app
 WORKDIR /app
 RUN gradle installDist
