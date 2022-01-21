@@ -9,5 +9,6 @@ allprojects {
         implementation('com.github.xabgesagtx:telegram-spring-boot-starter:0.24')
         implementation("org.eclipse.jetty:jetty-servlet:9.4.36.v20210114")
         testImplementation 'junit:junit:4.13'
+        testImplementation 'org.hamcrest:hamcrest:2.2'
     }
 }
