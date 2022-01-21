@@ -2,6 +2,7 @@ package tech.romashov;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -17,22 +18,23 @@ public class Bot extends TelegramLongPollingBot {
     @Value("${bot.token}")
     private String botToken;
 
-    private Logger log;
+    @Autowired
+    private Logger logger;
 
     public Bot() {
-        log = LoggerFactory.getLogger(App.class);
+        logger = LoggerFactory.getLogger(App.class);
     }
 
     @Override
     public void onUpdateReceived(Update update) {
         try {
-            log.info("Got message. Try to reply");
+            logger.info("Got message. Try to reply");
             SendMessage message = new SendMessage();
             message.setChatId(String.valueOf(update.getMessage().getChatId()));
             message.setText("Hi!");
             execute(message);
         } catch (TelegramApiException e) {
-            log.error(e.getMessage(), e);
+            logger.error(e.getMessage(), e);
         }
     }
 
