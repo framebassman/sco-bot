@@ -12,7 +12,7 @@ public class FakeBot extends Bot {
     private ArrayDeque<SendMessage> messages;
 
     public FakeBot() {
-        super();
+        super(new FakeLogger());
         messages = new ArrayDeque<>();
     }
 
