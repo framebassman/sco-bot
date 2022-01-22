@@ -1,7 +1,6 @@
 package tech.romashov;
 
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -18,11 +17,11 @@ public class Bot extends TelegramLongPollingBot {
     @Value("${bot.token}")
     private String botToken;
 
-    @Autowired
     private Logger logger;
 
-    public Bot() {
-        logger = LoggerFactory.getLogger(App.class);
+    @Autowired
+    public Bot(Logger logger) {
+        this.logger = logger;
     }
 
     @Override
