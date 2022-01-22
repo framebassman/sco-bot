@@ -1,5 +1,5 @@
 build:
   docker:
-    web: ./application/Production.Dockerfile
+    web: Production.Dockerfile
   config:
     ENVIRONMENT: Production
