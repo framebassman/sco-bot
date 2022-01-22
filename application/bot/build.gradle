@@ -7,6 +7,9 @@ repositories {
     mavenCentral()
 }
 
+group = 'tech.romashov.ash.application'
+version = '1.0.0-SNAPSHOT'
+
 dependencies {
     implementation project(':application:data')
     implementation group: 'org.slf4j', name: 'slf4j-api', version: '2.0.0-alpha1'
